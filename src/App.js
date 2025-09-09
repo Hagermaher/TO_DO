@@ -1,23 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
 
+
 function App() {
+  let task="study";
+  function handlesubmit(e) {
+    
+    e.preventDefault();
+    task=e.target[0].value;
+
+}
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="todo">
+     <form onSubmit={handlesubmit}>
+      <input placeholder='type your task'></input>
+      <button>ADD</button>
+      <p>{task}</p>
+     </form>
+        
     </div>
   );
 }
